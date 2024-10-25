@@ -1,0 +1,54 @@
+﻿@page
+@model Category.Pages.CategoryModel
+@{
+}
+<h1>Category List</h1>
+<style>
+    table {
+        width: 70%;
+        border-collapse: collapse;
+        /* Gộp các đường biên lại */
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        /* Đường biên cho ô */
+        padding: 8px;
+        /* Khoảng cách bên trong ô */
+        text-align: left;
+        /* Căn trái cho nội dung ô */
+    }
+
+    th {
+        background-color: #f2f2f2;
+        /* Màu nền cho hàng tiêu đề */
+    }
+</style>
+<div class="row">
+    <table style="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model.Categories)
+            {
+                <tr>
+                    <td>@category.Id</td>
+                    <td>@category.Name</td>
+                </tr>
+            }
+
+        </tbody>
+
+
+
+
+
+    </table>
+
+</div>
